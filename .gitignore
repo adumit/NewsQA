@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+.ipynb_checkpoints/
+Cleaning and Creating Answer Generating Dataset.ipynb
+newsqa/
+.gitignore
+sentence_per_line.txt
+__pycache__/
+Dim300_window5_mincount5
+Dim300_window5_mincount5.syn1neg.npy
+Dim300_window5_mincount5.wv.syn0.npy
+Sentence_Question_train.csv
