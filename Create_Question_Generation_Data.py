@@ -20,5 +20,13 @@ print(len(all_sq_pairs))
 sentences = [sq[0] for sq in all_sq_pairs if sq is not None]
 questions = [sq[1] for sq in all_sq_pairs if sq is not None]
 
-sq_df = pd.DataFrame(data={"sentences": sentences, "questions":questions})
-sq_df.to_csv("Sentence_Question_train.csv", index=False)
+with open("./Text_Data/story_text_per_line_lt65", 'ab') as fs:
+    with open("./Text_Data/question_per_line_lt65", 'ab') as fq:
+        for i in range(len(sentences)):
+            if len(sentences[i].split()) < 65 and len(questions[i].split()) < 15:
+                fs.write((sentences[i] + "\n").encode('utf-8'))
+                fq.write((questions[i] + "\n").encode('utf-8'))
+
+
+# sq_df = pd.DataFrame(data={"sentences": sentences, "questions":questions})
+# sq_df.to_csv("Sentence_Question_train.csv", index=False)
